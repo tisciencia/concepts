@@ -1,6 +1,6 @@
 # NoSQL document modeling
 
-1) Embed or reference
+## Embed or reference
 Embedding:
 - Data from entities are queried together
 - The child is a dependent e.g. Order Line depends on Order
@@ -16,7 +16,7 @@ Refence:
 
 Combining embed + reference
 
-2) Normalization vs denormalization
+## Normalization vs denormalization
 Normalization:
 - Normalized data may save some space, but...
   Requires multiple reads
@@ -28,24 +28,24 @@ Denormalization:
   Requires updates in multiple places
   Typically provides faster read speed
   
-3) Homogeneous vs Heterogeneous data
+## Homogeneous vs Heterogeneous data
 - SELECT c.type, c.id, c.name, c.sessions, c.speakers 
   FROM c
   WHERE c.sessionId = "session1"
   OR ARRAY_CONTAINS(c.sessions, {"sessionId", "session1"})
   ORDER BY c.type
  
-4) Hierarchies
+## Hierarchies
 - SELECT VALUE org.name FROM org WHERE ARRAY_CONTAINS(org.directs, "Ben")
 
-5) Keyworkds
+## Keyworkds
 - SELECT c.id, c.title FROM c WHERE ARRAY_CONTAINS(c.keywords, "design")
 
-6) Telemetry
+## Telemetry
 Consider storage of time-series data
   Device readings: Weather stations, sensors, etc.
   One document per time period, per device
 
-7) Logging
+## Logging
 Similar to telemetry; Consider parsing log entries
 Partition per time period, event type, region, etc.
