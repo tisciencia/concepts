@@ -8,7 +8,7 @@ Embedding:
 - Similar volatility
 - The set of values or sub-documents is bounded (1:few)
 
-Refence:
+Reference:
 - one-to-many relatioships (unbunded)
 - many-to-many relatioships
 - related data changes with differing volatility
